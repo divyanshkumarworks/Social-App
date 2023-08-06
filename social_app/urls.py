@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Post.views.postview import PostView
+from Blog.views.postview import PostView
+from Users import views as view1
+from Blog import views as view2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/authenticate', view1.authenticate_user, name='authenticate-user'),
     path('api/posts', PostView.as_view(), name='get-create-post-api'),
-    path('api/posts/<int:id>', PostView.as_view(), name='delete-task-api'),
+    path('api/posts/<int:post_id>', PostView.as_view(), name='delete-task-api'),
+    path('api/all_posts', view2.get_all_posts_api, name="get-all-posts-api"),
+    path('api/like/<int:post_id>', view2.like_post_api, name='like-post-api'),
+    path('api/unlike/<int:post_id>', view2.unlike_post_api, name='unlike-post-api'),
+    path('api/comment/<int:post_id>', view2.comment_on_post, name='comments-post-api')
 ]

@@ -1,3 +1,9 @@
 venv
  __pycache__/
 *.pyc
+/Blog/migrations/*.py
+/Blog/migrations/*.pyc
+/Blog/migrations/__pycache__/
+/Users/migrations/*.py
+/Users/migrations/*.pyc
+/Users/migrations/__pycache__/

@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Post',
+    'Blog',
+    'Users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,13 +84,10 @@ WSGI_APPLICATION = 'social_app.wsgi.application'
 
 DATABASES = {
        'default': {
-           'ENGINE': 'djongo',
+           'ENGINE': 'django.db.backends.postgresql',
            'NAME': 'SocialDB',
-           'Client': {
-            'host': 'mongodb+srv://johnybravo2404:%40bcd1234@cluster0.ikxf9ss.mongodb.net/?retryWrites=true&w=majority',
-                'username': 'johnybravo2404',
-                'password': '%40bcd1234'
-           }
+           'USER': 'johnybravo2404',
+           'PASSWORD': '@bcd1234'
        }
    }
 
