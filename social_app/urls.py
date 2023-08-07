@@ -29,5 +29,6 @@ urlpatterns = [
     path('api/unlike/<int:post_id>', view2.unlike_post_api, name='unlike-post-api'),
     path('api/comment/<int:post_id>', view2.comment_on_post, name='comments-post-api'),
     path('api/follow/<int:user_id>', view1.follow_api, name='follow-user-api'),
-    path('api/unfollow/<int:user_id>', view1.unfollow_api, name='unfollow-user-api')
+    path('api/unfollow/<int:user_id>', view1.unfollow_api, name='unfollow-user-api'),
+    path('api/user', view1.profile_api, name='user-porfile-api'),
 ]
