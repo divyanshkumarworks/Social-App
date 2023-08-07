@@ -27,5 +27,7 @@ urlpatterns = [
     path('api/all_posts', view2.get_all_posts_api, name="get-all-posts-api"),
     path('api/like/<int:post_id>', view2.like_post_api, name='like-post-api'),
     path('api/unlike/<int:post_id>', view2.unlike_post_api, name='unlike-post-api'),
-    path('api/comment/<int:post_id>', view2.comment_on_post, name='comments-post-api')
+    path('api/comment/<int:post_id>', view2.comment_on_post, name='comments-post-api'),
+    path('api/follow/<int:user_id>', view1.follow_api, name='follow-user-api'),
+    path('api/unfollow/<int:user_id>', view1.unfollow_api, name='unfollow-user-api')
 ]
